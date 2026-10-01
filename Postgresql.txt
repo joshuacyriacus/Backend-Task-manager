@@ -1,0 +1,178 @@
+Full course on postgreSQL
+
+What is a Database?
+ A database is a place where you can store, manipulate and retrieve data.
+
+SQL = Structured Query Language
+postgre uses SQL as the main query language
+postgreSQL is a relational database management system
+
+How data is stored 
+
+ - Datas are stored in tables 
+ - Columns
+ - Rows
+
+ postgreSQL
+
+ - object relational database management system
+ - Modern
+ - Open source
+
+ WAYS TO CONNECTING TO YOUR DB SERVER
+
+ - connecting using client
+ - GUI client
+ - Terminal/ CMD
+ - Application 
+
+ Create a database.
+ - CREATE DATABASE  database name
+
+ CONNECTING TO  DATABASE
+ - \c what ever database you want.
+
+ A VERY DANGEROUS COMMAND
+ - DROP DATABASE database name
+
+ CREATING A TABLE
+ CREATE TABLE person (
+    id INT, 
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    gender VARCHAR(7),
+    date_of_birth DATE );
+
+CREATING A TABLE CONSTRAINTS
+
+     CREATE TABLE person (
+       id BIGSERIAL NOT NULL PRIMARY KEY,
+       first_name VARCHAR(50) NOT NULL,
+       last_name VARCHAR(50) NOT NULL,
+       gender VARCHAR(7) NOT NULL,
+       date_of_birth DATE NOT NULL,
+       email VARCHAR(150) );
+
+INSERTING INTO A TABLE
+
+test=# INSERT INTO person (first_name, last_name, gender, date_of_birth)
+test-# VALUES ('Anne', 'Smith', 'FEMALE', date '1998-01-10');
+
+SELECT VALUES FROM A TABLE
+
+use SELECT * FROM table_name; to get all datas in that table;
+use SELECT Column_name FROM table_name to get a data under a Column_name;
+
+GET BY ORDER
+1 2 3 4 5 6 7 ASC
+7 6 5 4 3 2 1 DESC
+SELECT * FROM table_name ORDER BY Column_name;
+
+DISTINCT 
+To remove duplicates from your query;
+SELECT DISTINCT Column_name from table_name ORDER BY Column_name;
+
+
+WHERE CLAUSE and AND;
+where clause allows us to filter the data based on conditions.
+SELECT * FROM profile WHERE Column_name = 'Columns_value';
+SELECT * FROM profile WHERE gender = 'MALE' AND country = 'Nigeria';
+
+
+ COMPARISON OPERATORS
+ operators allows us to perform calculations, comparisons, and logic operation.
+ comparisons
+ SELECT 1 = 1;
+
+
+ LIMIT , OFFSET AND FETCH.
+ LIMIT can be used to limit the results coming from a query. 
+ SELECT * FROM table_name LIMIT number of records;
+
+OFFSET can be used to get records below a specfied limits
+ SELECT * FROM table_name OFFSET number of records; - this gets all records underneath  a specified limits.
+ SELECT * FROM table_name OFFSET number of records LIMIT number of data - Here the limits is added to specify the number of data that will be displayed or gotten.
+
+FETCH does the same thing as LIMIT 
+SELECT * FROM table_name OFFSET number to start FETCH FIRST number of records ROW ONLY;
+
+IN - KEYWORD
+IN - takes an arrays of values and return an arrays matching that values 
+SELECT * FROM table_name WHERE Column_name IN ('values');
+
+BETWEEN 
+BETWEEN is used to find values within a range, including the two boundaries.
+SELECT * FROM table_name WHERE Column_name BETWEEN 'Columns_value' AND 'Columns_value';
+
+
+LIKE AND ILIKE
+ LIKE AND ILIKE ARE USED FOR SEARCH TEXT PATTERN;
+
+ LIKE IS CASE SENSITIVE in postgreSQL
+ SELECT * 
+ FROM product 
+ WHERE name LIKE 'value%';
+
+ "%" means any number of characters.
+
+ "value%"  --starts with value.
+ "%value"  --ends with value.
+ "%value%  --contains value.
+ "_at"     -- exactly one  character before "at"
+
+ ILIKE works like LIKE , but is case-insensitive.
+
+GROUP BY AND GROUP BY HAVING
+GROUP BY is used to put rows with the same values into groups.
+
+SELECT stock, COUNT(*)
+FROM product
+GROUP BY stock;
+
+HAVING 
+HAVING filters the groups created by GROUP BY.
+
+SELECT stock, count(*) as total_product
+FROM product 
+GROUP BY stock
+HAVING COUNT(*) > 1;
+
+CALCULATING SUM , MIN, MAX AND AVERAGE.
+
+MAX()  -  Highest value;
+MIN()  -  Lowest value;
+AVG()  -  Average value;
+SUM()  -  Total
+
+1. MAX() — highest price
+SELECT MAX(price) as highest_value
+FROM product;
+Finds the most expensive product.
+
+2. MIN() — lowest price
+SELECT MIN(price) AS lowest_price
+FROM product;
+Finds the cheapest product.
+
+3. AVG() — average price
+SELECT AVG(price) AS average_price
+FROM product;
+Adds all the prices and divides by the number of products.
+
+4. SUM() — total
+SELECT SUM(price) AS total_price
+FROM product;
+This adds all product prices together.
+
+ARITHMETIC OPERATORS
+1. Basic arithmetic operators
+
+SQL supports the normal mathematical operators:
+
+Operator	Meaning	Example
++	Addition	price + 100
+-	Subtraction	price - 100
+*	Multiplication	price * 2
+/	Division	price / 2
+%	Remainder	price % 2
+

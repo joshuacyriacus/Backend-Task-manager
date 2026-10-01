@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "title": "Learn Express",
+    "description": "Practice Express and TypeScript",
+    "completed": false,
+    "priority": "high",
+    "dueDate": "2026-09-05"
+  },
+  {
+    "id": 2,
+    "title": "Learn TypeScript",
+    "description": "Practice interfaces, types, generics, and functions",
+    "completed": true,
+    "priority": "high",
+    "dueDate": "2026-09-01"
+  },
+  {
+    "id": 3,
+    "title": "Build REST API",
+    "description": "Create GET, POST, PATCH, and DELETE endpoints",
+    "completed": false,
+    "priority": "high",
+    "dueDate": "2026-09-07"
+  },
+  {
+    "id": 4,
+    "title": "Practice coding every",
+    "description": "Create custom middleware for logging and validation",
+    "completed": true,
+    "priority": "low",
+    "dueDate": "2026-09-08"
+  },
+  {
+    "id": 5,
+    "title": "Learn HTTP Status Codes",
+    "description": "Practice using appropriate HTTP status codes",
+    "completed": true,
+    "priority": "medium",
+    "dueDate": "2026-09-02"
+  },
+  {
+    "id": 6,
+    "title": "Create Task Controller",
+    "description": "Build controller functions for managing tasks",
+    "completed": false,
+    "priority": "high",
+    "dueDate": "2026-09-10"
+  },
+  {
+    "id": 7,
+    "title": "Practice Error Handling",
+    "description": "Create centralized error-handling middleware",
+    "completed": false,
+    "priority": "high",
+    "dueDate": "2026-09-11"
+  },
+  {
+    "id": 8,
+    "title": "Test API with Postman",
+    "description": "Send requests and test all task endpoints",
+    "completed": false,
+    "priority": "medium",
+    "dueDate": "2026-09-12"
+  },
+  {
+    "id": 9,
+    "title": "Learn File System",
+    "description": "Practice reading and writing JSON files with Node.js fs",
+    "completed": true,
+    "priority": "low",
+    "dueDate": "2026-09-04"
+  },
+  {
+    "id": 10,
+    "title": "Connect MongoDB",
+    "description": "Connect the backend application to MongoDB",
+    "completed": false,
+    "priority": "high",
+    "dueDate": "2026-09-15"
+  },
+  {
+    "id": 11,
+    "title": "Create Task Validation",
+    "description": "Validate task fields before adding them to the database",
+    "completed": false,
+    "priority": "medium",
+    "dueDate": "2026-09-13"
+  }
+]
